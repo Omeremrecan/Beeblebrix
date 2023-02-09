@@ -1,0 +1,9 @@
+@import "./abstract/variables.scss";
+@import "./abstract/typograhy.scss";
+
+body{
+  margin:0;
+  background-color: $color-secondary;
+  color:white
+}
+

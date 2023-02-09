@@ -1,0 +1,28 @@
+@import "styles/abstract/variables.scss";
+
+.nav-bar {
+  display: flex;
+  background-color: $color-secondary-dark;
+  height: 4rem;
+  padding: 0 5rem;
+
+  &__left {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    flex: 1;
+    & img {
+      height: 2rem;
+    }
+  }
+  &__right {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    & > .button{
+      &:not(:last-child){
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
