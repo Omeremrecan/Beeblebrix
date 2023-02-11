@@ -8,9 +8,12 @@
   }
   &--list {
     display: flex;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
-
+    gap: 1rem;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-bottom: 0.8rem;
+    
     overflow-y: auto;
     &::-webkit-scrollbar{
       background-color: transparent;
