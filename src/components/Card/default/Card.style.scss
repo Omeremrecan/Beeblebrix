@@ -1,0 +1,27 @@
+@import "styles/abstract/variables.scss";
+
+.card{
+  width: 15rem;
+  min-width: 15rem;
+  max-width: 15rem;
+  background-color: $color-secondary-light;
+  border-radius: 0.5rem;
+  
+  & > a {
+    text-decoration: none;
+  }
+
+  &--img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  &--title{
+    width: calc(100% - 2rem);
+    color:white;
+    padding: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

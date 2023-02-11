@@ -1,4 +1,5 @@
 import { Button } from "base/dependencies/components";
+import AppContext from "context-api/contexts/AppContext";
 import useTranslation from "hooks/useTranslation";
 import "./Navbar.style.scss";
 
@@ -11,7 +12,14 @@ export const Navbar = () => {
         <img src="img/text-logo.png" />
       </div>
       <div className="nav-bar__right">
-        <Button title={translate("SEARCH")} />
+        <AppContext.Consumer>
+          {({ setPath }) => (
+            <Button
+              title={translate("SEARCH")}
+              onClick={() => {setPath("/search")}}
+            />
+          )}
+        </AppContext.Consumer>
         <Button type="outlined" title={translate("LOGOUT")} />
       </div>
     </nav>

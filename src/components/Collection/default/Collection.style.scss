@@ -1,0 +1,27 @@
+@import "styles/abstract/variables";
+
+.collection {
+  margin-bottom: 5rem;
+  &--title {
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+  }
+  &--list {
+    display: flex;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+      background-color: $color-primary;
+      border-radius: 1000px;
+    }
+
+    &::-webkit-scrollbar-track{
+    }
+  }
+}
