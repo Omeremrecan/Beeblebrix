@@ -4,17 +4,8 @@
   width: 15rem;
   min-width: 15rem;
   max-width: 15rem;
-  background-color: $color-secondary-light;
   border-radius: 0.5rem;
-  transition: 0.2s all;
 
-
-  &:hover{
-    box-shadow: rgba($color-primary, 0.3) 0px 0px 0px 3px;
-    transform: scale(1.02);
-  }
-
-  
   & > a {
     text-decoration: none;
   }
@@ -22,14 +13,22 @@
   &--img{
     width: 100%;
     aspect-ratio: 16/9;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.2s all;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+
+    &:hover{
+      box-shadow: rgba($color-primary, 0.3) 0px 0px 0px 3px;
+      transform: scale(1.02);
+    }
   }
   &--title{
     width: calc(100% - 2rem);
     color:white;
-    padding: 1rem;
+    margin-top: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 1rem;
   }
 }
