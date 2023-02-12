@@ -1,0 +1,20 @@
+@import "styles/abstract/variables.scss";
+
+.textbox{
+  background-color: $color-secondary-light;
+  border:1px solid $color-secondary-dark;
+  border-radius: 0.5rem;
+  width: 100%;
+  color:white;
+  transition: 0.2s all;
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &:focus{
+    border:1px solid $color-primary;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    transform: scale(1.02);
+  }
+}
