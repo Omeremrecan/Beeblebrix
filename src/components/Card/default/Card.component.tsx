@@ -5,10 +5,10 @@ import './Card.style.scss'
 export const Card = ({ imgSrc, title, href }: CardProps) => {
   return (
     <div className="card">
-      <a href={href}>
+      <div>
         <img className='card--img' src={imgSrc} />
         <div className="card--title">{title}</div>
-      </a>
+      </div>
     </div>
   )
 }
