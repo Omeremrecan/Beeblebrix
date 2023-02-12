@@ -7,21 +7,26 @@ export const Navbar = () => {
   const [translate] = useTranslation();
 
   return (
-    <nav className="nav-bar">
-      <div className="nav-bar__left">
-        <img src="img/text-logo.png" />
-      </div>
-      <div className="nav-bar__right">
-        <AppContext.Consumer>
-          {({ setPath }) => (
+    <AppContext.Consumer>
+      {({ setPath }) => (
+        <nav className="nav-bar">
+          <div className="nav-bar__left">
+            <img src="img/text-logo.png" onClick={() => {
+              setPath("/");
+            }} />
+          </div>
+          <div className="nav-bar__right">
             <Button
               title={translate("SEARCH")}
-              onClick={() => {setPath("/search")}}
+              onClick={() => {
+                setPath("/search");
+              }}
             />
-          )}
-        </AppContext.Consumer>
-        <Button type="outlined" title={translate("LOGOUT")} />
-      </div>
-    </nav>
+
+            <Button type="outlined" title={translate("LOGOUT")} />
+          </div>
+        </nav>
+      )}
+    </AppContext.Consumer>
   );
 };

@@ -6,5 +6,6 @@ export default {
   FANTASTIC: "Fantastik",
   DRAMA: "Dram",
   COMEDY: "Komedi",
-  DOCUMENTARY: "Belgesel"
+  DOCUMENTARY: "Belgesel",
+  GET_MORE: "Daha Fazla Sonuç Getir"
 }

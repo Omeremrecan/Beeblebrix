@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   Navbar,
   PageContainer,
@@ -14,10 +15,18 @@ export const SearchPage = () => {
   const [SearchText, setSearchText] = useState<string>("");
   const [translate] = useTranslation();
   const [results, setResults] = useState<Movie[]>([]);
+  const [showingResultCount, setShowingResultCount] = useState<number>(2);
 
   useEffect(() => {
-
-  }, [SearchText])
+    if (SearchText != "") {
+      movieManager.searchInMovies(SearchText).then((data) => {
+        setResults(data);
+      });
+    } else {
+      setResults([]);
+    }
+    setShowingResultCount(2);
+  }, [SearchText]);
 
   return (
     <>
@@ -32,7 +41,7 @@ export const SearchPage = () => {
             />
           </div>
           <div className="search-page__results">
-            {results.map((movie) => (
+            {results.slice(0, showingResultCount).map((movie) => (
               <Card
                 key={movie.id}
                 imgSrc={movie.imgSrc}
@@ -40,6 +49,16 @@ export const SearchPage = () => {
                 href={""}
               />
             ))}
+          </div>
+          <div className="search-page__result-actions">
+            {results.length > showingResultCount ? (
+              <Button
+                title={translate("GET_MORE")}
+                onClick={() => {
+                  setShowingResultCount(results.length);
+                }}
+              />
+            ) : null}
           </div>
         </div>
       </PageContainer>

@@ -4,9 +4,9 @@ import { categoryManager } from "base/dependencies/managers";
 import axios from "axios";
 
 export class MovieManager {
-  apiUrl: string
+  apiUrl: string;
 
-  constructor(apiUrl:string){
+  constructor(apiUrl: string) {
     this.apiUrl = apiUrl;
   }
 
@@ -18,5 +18,11 @@ export class MovieManager {
       });
   }
 
-  async searchInMovies(searchText: string) {}
+  async searchInMovies(searchText: string): Promise<Movie[]> {
+    return axios
+      .get(`${this.apiUrl}/movies?searchText=${searchText}`)
+      .then((res) => {
+        return res.data;
+      });
+  }
 }

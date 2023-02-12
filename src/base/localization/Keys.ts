@@ -7,3 +7,4 @@ export type Keys =
   | 'DRAMA'
   | 'COMEDY'
   | 'DOCUMENTARY'
+  | 'GET_MORE'

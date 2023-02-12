@@ -1,8 +1,30 @@
-.search-page{
+.search-page {
   padding-top: 5rem;
-  &__search-box{
+
+  &__search-box {
     width: 30rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  &__result-actions {
+    display: flex;
+    margin-top: 2rem;
+
+    & > * {
+      &:first-child {
+        margin-left: auto;
+      }
+      &:last-child {
+        margin-right: auto;
+      }
+    }
+  }
+
+  &__results {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
   }
 }

@@ -4,21 +4,25 @@
   display: flex;
   background-color: $color-secondary-dark;
   height: 4rem;
-  padding: 0 5rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  position: fixed;
+  width: 100vw;
 
   &__left {
     margin-top: auto;
     margin-bottom: auto;
+    padding-left: 5rem;
 
     flex: 1;
     & img {
       height: 2rem;
+      cursor: pointer;
     }
   }
   &__right {
     margin-top: auto;
     margin-bottom: auto;
+    padding-right: 5rem;
 
     & > .button{
       &:not(:last-child){

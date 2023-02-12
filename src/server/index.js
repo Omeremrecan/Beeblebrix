@@ -31,7 +31,7 @@ categories.forEach((category) => {
   for (var i = 1; i < 21; i++) {
     movies.push({
       id: (category * 20 + i).toString(),
-      title: faker.lorem.words(2),
+      title: faker.word.noun(),
       imgSrc: faker.image.image(),
       categoryId: category.id,
     });
