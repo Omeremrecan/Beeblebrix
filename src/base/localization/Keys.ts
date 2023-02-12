@@ -14,3 +14,4 @@ export type Keys =
   | 'USERNAME_OR_PASSWORD_IS_WRONG'
   | 'USERNAME'
   | 'PASSWORD'
+  | 'FAVORITES'

@@ -14,4 +14,5 @@ export default {
   USERNAME_OR_PASSWORD_IS_WRONG: "Username or password is wrong.",
   USERNAME: "Username",
   PASSWORD: "Password",
+  FAVORITES: "Favorites"
 };

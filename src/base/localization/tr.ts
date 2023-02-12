@@ -14,4 +14,5 @@ export default {
   USERNAME_OR_PASSWORD_IS_WRONG: "Kullanıcı adı ya da şifre hatalı.",
   USERNAME: "Kullanıcı adı",
   PASSWORD: "Şifre",
+  FAVORITES: "Favoriler"
 }

@@ -5,8 +5,6 @@ import AppContext from "../contexts/AppContext";
 const AppContextProvider = ({ children }: any) => {
   const [path, setPath] = useState<string>(window.location.pathname);
 
-  console.log(window.location.pathname);
-
   useEffect(() => {
     if (path !== window.location.pathname){
       /* eslint-disable no-restricted-globals */

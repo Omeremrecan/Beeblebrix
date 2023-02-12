@@ -32,22 +32,20 @@ const CollectionsByCategory = ({
   return (
     <Collection title={translate(category.name as Keys)}>
       {movies.map((movie) => (
-        <>
-          <Card
-            key={movie.id}
-            title={movie.title}
-            imgSrc={movie.imgSrc}
-            href=""
-            isFavorite={movie.isFavorite}
-            onFavoriteChange={(isFavorite) => {
-              movieManager
-                .changeFavorite(movie.id, isFavorite)
-                .then((favorites) => {
-                  setFavorites(favorites);
-                });
-            }}
-          />
-        </>
+        <Card
+          key={movie.id}
+          title={movie.title}
+          imgSrc={movie.imgSrc}
+          href=""
+          isFavorite={movie.isFavorite}
+          onFavoriteChange={(isFavorite) => {
+            movieManager
+              .changeFavorite(movie.id, isFavorite)
+              .then((favorites) => {
+                setFavorites(favorites);
+              });
+          }}
+        />
       ))}
     </Collection>
   );
@@ -58,18 +56,16 @@ const HomePageComponent = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [favorites, setFavorites] = useState<Movie[]>([]);
 
-
   useEffect(() => {
     movieManager.getFavorites().then(setFavorites);
     categoryManager.getCategories().then(setCategories);
   }, []);
 
-
   return (
     <>
       <Navbar />
       <PageContainer>
-        <Collection title="Favoriler">
+        <Collection title={translate("FAVORITES")}>
           {favorites.map((movie) => (
             <AppContext.Consumer>
               {({ setPath, path }) => (
