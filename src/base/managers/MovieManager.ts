@@ -1,18 +1,22 @@
-import { Movie } from 'base/entities/Movie'
-import { faker } from '@faker-js/faker'
+import { Movie } from "base/entities/Movie";
+import { faker } from "@faker-js/faker";
+import { categoryManager } from "base/dependencies/managers";
+import axios from "axios";
 
 export class MovieManager {
-  async getMovies(categoryId: string): Promise<Movie[]> {
-    const list: Movie[] = []
+  apiUrl: string
 
-    for (var i = 0; i < 20; i++) {
-      list.push({
-        id: i.toString(),
-        title: faker.lorem.words(2),
-        imgSrc: faker.image.image(),
-        categoryId: categoryId,
-      })
-    }
-    return list
+  constructor(apiUrl:string){
+    this.apiUrl = apiUrl;
   }
+
+  async getMovies(categoryId: string): Promise<Movie[]> {
+    return axios
+      .get(`${this.apiUrl}/movies?categoryId=${categoryId}`)
+      .then((res) => {
+        return res.data;
+      });
+  }
+
+  async searchInMovies(searchText: string) {}
 }
