@@ -29,8 +29,6 @@ export class SecurityManager {
             success: false,
           };
         }
-
-        return res.data;
       });
   }
 

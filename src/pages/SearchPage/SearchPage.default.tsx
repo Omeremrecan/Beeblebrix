@@ -47,6 +47,7 @@ const SearchPageComponent = () => {
                 key={movie.id}
                 imgSrc={movie.imgSrc}
                 title={movie.title}
+                isFavorite={movie.isFavorite}
                 href={""}
               />
             ))}

@@ -1,31 +1,44 @@
 @import "styles/abstract/variables.scss";
 
-.card{
+.card {
   width: 15rem;
   min-width: 15rem;
   max-width: 15rem;
   border-radius: 0.5rem;
+  position: relative;
+
+  &--star {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+    top: 4px;
+    right: 4px;
+    color: white;
+
+    &-active{
+      color:#ffb700;
+    }
+  }
 
   & > a {
     text-decoration: none;
   }
 
-  &--img{
+  &--img {
     width: 100%;
     aspect-ratio: 16/9;
     border-radius: 0.3rem;
     transition: 0.2s all;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 
-
-    &:hover{
+    &:hover {
       box-shadow: rgba($color-primary, 0.3) 0px 0px 0px 3px;
       transform: scale(1.02);
     }
   }
-  &--title{
+  &--title {
     width: calc(100% - 2rem);
-    color:white;
+    color: white;
     margin-top: 0.5rem;
     white-space: nowrap;
     overflow: hidden;

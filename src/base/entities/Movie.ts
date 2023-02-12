@@ -3,4 +3,5 @@ export type Movie = {
   id: string
   imgSrc: string
   categoryId: string
+  isFavorite: boolean
 }

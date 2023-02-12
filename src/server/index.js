@@ -30,19 +30,21 @@ const categories = [
   { id: "5", name: "DOCUMENTARY" },
 ];
 
-const movies = [];
+var movies = [];
 
 const isEmpty = (str) => {
   return str == undefined || str == null || str == "";
 };
 
+var movieId = 1;
 categories.forEach((category) => {
   for (var i = 1; i < 21; i++) {
     movies.push({
-      id: (category * 20 + i).toString(),
+      id: movieId++,
       title: faker.word.noun(),
       imgSrc: faker.image.image(),
       categoryId: category.id,
+      isFavorite: false,
     });
   }
 });
@@ -81,12 +83,27 @@ app.post("/security/login", (req, res) => {
         surname: user.surname,
       },
     });
-  }
-  else {
+  } else {
     res.send({
       success: false,
-    })
+    });
   }
+});
+
+app.post("/movies/favorites", (req, res) => {
+  const id = req.body.id;
+  const isFavorite = req.body.isFavorite;
+
+  movies = [
+    ...movies.filter((movie) => movie.id != id),
+    { ...movies.find((movie) => movie.id == id), isFavorite: isFavorite },
+  ].sort((x, y) => (parseInt(x.id) - parseInt(y.id) > 0 ? 1 : -1));
+
+  res.send(movies.filter((x) => x.isFavorite));
+});
+
+app.get("/movies/favorites", (req, res) => {
+  res.send(movies.filter((x) => x.isFavorite));
 });
 
 app.listen(3001);

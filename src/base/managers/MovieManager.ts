@@ -19,6 +19,20 @@ export class MovieManager {
       });
   }
 
+  async changeFavorite(id: string, isFavorite: boolean): Promise<Movie[]> {
+    return axios
+      .post(`${this.configs.apiUrl}/movies/favorites`, { id, isFavorite })
+      .then((res) => {
+        return res.data;
+      });
+  }
+
+  async getFavorites(): Promise<Movie[]> {
+    return axios.get(`${this.configs.apiUrl}/movies/favorites`).then((res) => {
+      return res.data;
+    });
+  }
+
   async searchInMovies(searchText: string): Promise<Movie[]> {
     return axios
       .get(`${this.configs.apiUrl}/movies?searchText=${searchText}`)
