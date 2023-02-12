@@ -1,3 +1,9 @@
+@import "styles/abstract/mixins.scss";
+
 .page-container{
-  padding: 7rem 5rem
+  padding: 7rem 5rem;
+
+  @include respond(phone){
+    padding: 5rem 2rem;
+  }
 }
