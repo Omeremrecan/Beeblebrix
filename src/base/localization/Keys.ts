@@ -12,3 +12,5 @@ export type Keys =
   | 'OK'
   | 'FAILED'
   | 'USERNAME_OR_PASSWORD_IS_WRONG'
+  | 'USERNAME'
+  | 'PASSWORD'

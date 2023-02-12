@@ -34,6 +34,7 @@ export const LoginPage = () => {
                 <>
                   <Textbox
                     value={username}
+                    placeholder={translate("USERNAME")}
                     onChange={setUsername}
                     onEnter={() => {
                       login(() => {
@@ -45,6 +46,7 @@ export const LoginPage = () => {
                     type="password"
                     value={password}
                     onChange={setPassword}
+                    placeholder={translate("PASSWORD")}
                     onEnter={() => {
                       login(() => {
                         setPath("/");

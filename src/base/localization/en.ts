@@ -11,5 +11,7 @@ export default {
   LOGIN: "Log In",
   OK: "Ok",
   FAILED: "Failed!",
-  USERNAME_OR_PASSWORD_IS_WRONG: "Username or password is wrong."
+  USERNAME_OR_PASSWORD_IS_WRONG: "Username or password is wrong.",
+  USERNAME: "Username",
+  PASSWORD: "Password",
 };
