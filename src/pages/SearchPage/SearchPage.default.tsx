@@ -7,11 +7,12 @@ import {
 } from "base/dependencies/components";
 import { movieManager } from "base/dependencies/managers";
 import { Movie } from "base/entities/Movie";
+import requireAuthentication from "hocs/requireAuthentication";
 import useTranslation from "hooks/useTranslation";
 import React, { useEffect, useState } from "react";
 import "./SearchPage.default.style.scss";
 
-export const SearchPage = () => {
+const SearchPageComponent = () => {
   const [SearchText, setSearchText] = useState<string>("");
   const [translate] = useTranslation();
   const [results, setResults] = useState<Movie[]>([]);
@@ -65,3 +66,5 @@ export const SearchPage = () => {
     </>
   );
 };
+
+export const SearchPage = requireAuthentication(SearchPageComponent);

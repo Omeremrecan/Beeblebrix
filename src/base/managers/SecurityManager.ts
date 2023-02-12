@@ -16,7 +16,6 @@ export class SecurityManager {
       .post(`${this.configs.apiUrl}/security/login`, { username, password })
       .then((res) => {
         if (res.data.success) {
-
           const session: Session = {
             user: res.data.data,
           };
@@ -46,5 +45,9 @@ export class SecurityManager {
 
   setSession = (session: Session) => {
     localStorage.setItem(this.configs.appName, JSON.stringify(session));
+  };
+
+  removeSession = () => {
+    localStorage.removeItem(this.configs.appName);
   };
 }

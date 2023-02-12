@@ -8,10 +8,11 @@ import { categoryManager, movieManager } from 'base/dependencies/managers'
 import { Category } from 'base/entities/Category'
 import { Movie } from 'base/entities/Movie'
 import { Keys } from 'base/localization/Keys'
+import requireAuthentication from 'hocs/requireAuthentication'
 import useTranslation from 'hooks/useTranslation'
 import React, { useEffect, useState } from 'react'
 
-export const HomePage = () => {
+const HomePageComponent = () => {
   const [categories, setCategories] = useState<Category[]>([])
 
   const [translate] = useTranslation()
@@ -47,3 +48,5 @@ export const HomePage = () => {
     </>
   )
 }
+
+export const HomePage = requireAuthentication(HomePageComponent);
