@@ -1,32 +1,35 @@
 @import "styles/abstract/variables.scss";
 
-.button{
-  height: 2.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
+
+.button {
+  height: 3rem !important;
+  border-radius: 0.3rem !important;
+  cursor: pointer !important;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 0 0.5rem;
 
+  &:focus, &:active{
+    box-shadow: rgba($color-primary, 0.5) 0px 0px 0px 3px !important;
+  }
 
+  &-contained {
+    background-color: $color-primary !important;
+    color: $color-secondary-dark !important;
+    border: 1px solid $color-primary !important;
 
-  &-contained{
-    background-color: $color-primary;
-    color: $color-secondary-dark;
-    border: 1px solid $color-primary;
-
-    &:hover{
-      background-color: darken($color-primary, 5%);
-      border-color: darken($color-primary, 5%);
+    &:hover {
+      background-color: darken($color-primary, 5%) !important;
+      border-color: darken($color-primary, 5%) !important;
     }
   }
-  &-outlined{
-    background-color: transparent;
-    color: $color-primary;
-    border: 1px solid $color-primary;
-    background-color: darken(transparent, 10%);
+  &-outlined {
+    background-color: transparent !important;
+    color: $color-primary !important;
+    border: 1px solid $color-primary !important;
+    background-color: darken(transparent, 10%) !important;
 
-    &:hover{
-      background-color: rgba($color-primary, 0.2)
+    &:hover {
+      background-color: rgba($color-primary, 0.2) !important;
     }
   }
-  
 }

@@ -1,0 +1,21 @@
+.login-page {
+  &__container {
+    width: 20rem;
+    margin-top: calc(50vh - 15rem );
+    margin-left: auto;
+    margin-right: auto;
+    & > img{
+      width: 10rem;
+      margin-left: 5rem;
+      margin-bottom: 2rem;
+    }
+    &--form {
+      & > * {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

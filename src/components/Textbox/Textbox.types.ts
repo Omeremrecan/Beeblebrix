@@ -3,4 +3,5 @@ export type TextboxProps = {
   onChange?: (value: string) => void;
   placeholder?: string;
   type?: "password"
+  onEnter?: () => void
 };

@@ -8,5 +8,8 @@ export default {
   COMEDY: "Komedi",
   DOCUMENTARY: "Belgesel",
   GET_MORE: "Daha Fazla Sonuç Getir",
-  LOGIN: "Giriş Yap"
+  LOGIN: "Giriş Yap",
+  OK: "Tamam",
+  FAILED: "İşlem Başarısız!",
+  USERNAME_OR_PASSWORD_IS_WRONG: "Kullanıcı adı ya da şifre hatalı."
 }

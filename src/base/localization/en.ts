@@ -8,5 +8,8 @@ export default {
   COMEDY: "Comedy",
   DOCUMENTARY: "Documentary",
   GET_MORE: "Get More Results",
-  LOGIN: "Log In"
-}
+  LOGIN: "Log In",
+  OK: "Ok",
+  FAILED: "Failed!",
+  USERNAME_OR_PASSWORD_IS_WRONG: "Username or password is wrong."
+};

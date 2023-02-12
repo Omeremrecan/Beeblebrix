@@ -9,3 +9,6 @@ export type Keys =
   | 'DOCUMENTARY'
   | 'GET_MORE'
   | 'LOGIN'
+  | 'OK'
+  | 'FAILED'
+  | 'USERNAME_OR_PASSWORD_IS_WRONG'
