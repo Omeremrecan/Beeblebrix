@@ -7,5 +7,6 @@ export default {
   DRAMA: "Drama",
   COMEDY: "Comedy",
   DOCUMENTARY: "Documentary",
-  GET_MORE: "Get More Results"
+  GET_MORE: "Get More Results",
+  LOGIN: "Log In"
 }

@@ -7,5 +7,6 @@ export default {
   DRAMA: "Dram",
   COMEDY: "Komedi",
   DOCUMENTARY: "Belgesel",
-  GET_MORE: "Daha Fazla Sonuç Getir"
+  GET_MORE: "Daha Fazla Sonuç Getir",
+  LOGIN: "Giriş Yap"
 }

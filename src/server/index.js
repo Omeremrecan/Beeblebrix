@@ -13,6 +13,15 @@ app.use(
   })
 );
 
+const users = [
+  {
+    name: "Admin",
+    surname: "",
+    username: "admin",
+    password: "123456",
+  },
+];
+
 const categories = [
   { id: "1", name: "SCIENCE_FICTION" },
   { id: "2", name: "FANTASTIC" },
@@ -53,6 +62,31 @@ app.get("/movies", (req, res) => {
 
 app.get("/categories", (req, res) => {
   res.send(categories);
+});
+
+app.post("/security/login", (req, res) => {
+  const credential = req.body;
+  const user = users.find(
+    (user) =>
+      user.username == credential.username &&
+      user.password == credential.password
+  );
+
+  if (user != null && user != undefined) {
+    res.send({
+      success: true,
+      data: {
+        username: user.username,
+        name: user.name,
+        surname: user.surname,
+      },
+    });
+  }
+  else {
+    res.send({
+      success: false,
+    })
+  }
 });
 
 app.listen(3001);

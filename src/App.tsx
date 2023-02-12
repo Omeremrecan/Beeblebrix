@@ -2,6 +2,7 @@ import React from "react";
 import { ErrorPage, HomePage, SearchPage } from "base/dependencies/pages";
 import AppContext from "context-api/contexts/AppContext";
 import AppContextProvider from "context-api/providers/AppContextProvider";
+import { LoginPage } from "pages/LoginPage/LoginPage.default";
 
 const App = () => {
   const getPage = (path: string) => {
@@ -9,6 +10,8 @@ const App = () => {
       return <HomePage />;
     } else if (path == "/search") {
       return <SearchPage />;
+    } else if (path == "/login") {
+      return <LoginPage />;
     } else {
       return <ErrorPage />;
     }

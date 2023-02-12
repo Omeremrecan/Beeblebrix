@@ -8,3 +8,4 @@ export type Keys =
   | 'COMEDY'
   | 'DOCUMENTARY'
   | 'GET_MORE'
+  | 'LOGIN'
